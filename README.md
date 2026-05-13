@@ -23,19 +23,22 @@ Planned for future releases as the companion articles publish:
 
 ## Installing
 
-> **Note:** Skills are available on paid Claude plans (Pro, Max, Team, Enterprise). Free plans do not currently support custom skill uploads.
-
 ### Claude.ai (web or desktop app)
 
+**One-time prerequisite:** Enable code execution. Go to **[Settings → Capabilities](https://claude.ai/settings/capabilities)** and turn on **Code execution and file creation**. Skills won't work without this.
+
+**Install the skill:**
+
 1. Download `mental-models.zip` from the [latest release](../../releases/latest).
-2. In Claude, click your profile icon (top right) → **Settings**.
-3. Go to **Capabilities** and confirm **Code execution and file creation** is enabled.
-4. Go to **Customize → Skills**.
-5. Click the **+** button, then **+ Create skill**.
-6. Upload `mental-models.zip`.
-7. Toggle the skill on if it isn't already.
+2. Go to **[Customize → Skills](https://claude.ai/customize/skills)**.
+3. Click the **+** button, then **+ Create skill**.
+4. Select **Upload a skill**.
+5. Upload `mental-models.zip`.
+6. Toggle the skill on if it isn't already.
 
 Start a new conversation and Claude will load the skill automatically when you ask for framework-based analysis.
+
+> Skills are available on Free, Pro, Max, Team, and Enterprise plans. Team and Enterprise users may need an owner to enable Skills at the organization level first.
 
 ### Claude Code (terminal)
 
@@ -49,6 +52,20 @@ Start a new Claude Code session. Confirm the skill loaded by typing `/skills`.
 ### Claude API
 
 Reference the skill folder in your API calls. See the [Anthropic Skills documentation](https://docs.claude.com) for current syntax.
+
+### Other AI coding tools
+
+This skill uses the [Agent Skills open standard](https://agentskills.io), so it works in any agent that supports the `SKILL.md` format. That currently includes Cursor, OpenAI Codex CLI, Gemini CLI, and GitHub Copilot. The install pattern is the same idea on each: clone the repo and copy the `mental-models/` folder into the tool's skills directory.
+
+```bash
+git clone https://github.com/fpizzuta/mental-models.git
+```
+
+Then place the `mental-models/` folder where your agent expects skills to live. Check your tool's documentation for the exact path - it varies between tools but the skill content is identical.
+
+### ChatGPT and Gemini (consumer apps)
+
+The consumer products from OpenAI (ChatGPT) and Google (Gemini) use proprietary formats (Custom GPTs and Gems) rather than the Agent Skills standard. They are not currently supported by direct install. A companion Custom GPT and Gem may be released separately - see the repo issues for status.
 
 ## How to use
 
