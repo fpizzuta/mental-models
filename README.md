@@ -116,4 +116,4 @@ MIT. See `LICENSE`.
 
 ## About
 
-Built by [Frank Garofalo](https://www.linkedin.com/in/YOUR-LINKEDIN), Principal Engineer at Inveniam Capital Partners. Part of the *Mental Frameworks for the AI Era* series.
+Built by [Frank Pizzuta](https://www.linkedin.com/in/frankpizzuta), Principal Engineer at Inveniam Capital Partners. Part of the *Mental Frameworks for the AI Era* series.
