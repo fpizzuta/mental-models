@@ -1,0 +1,19 @@
+# Built artifacts
+*.skill
+*.zip
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local working files
+/tmp/
+/scratch/

@@ -1,0 +1,36 @@
+name: Build and attach .skill on release
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-skill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build .skill archive
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          zip -r mental-models.skill mental-models/ -x "*.DS_Store"
+          ls -la mental-models.skill
+
+      - name: Upload to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: mental-models.skill
+          fail_on_unmatched_files: true
+
+      - name: Upload as workflow artifact (manual runs)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mental-models-skill
+          path: mental-models.skill
