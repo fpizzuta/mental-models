@@ -23,12 +23,19 @@ Planned for future releases as the companion articles publish:
 
 ## Installing
 
+> **Note:** Skills are available on paid Claude plans (Pro, Max, Team, Enterprise). Free plans do not currently support custom skill uploads.
+
 ### Claude.ai (web or desktop app)
 
-1. Download `mental-models.skill` from the [latest release](../../releases/latest).
-2. In Claude, go to **Settings → Capabilities** and turn on **Code execution and file creation**.
-3. Go to **Customize → Skills → Upload skill** and select the file you downloaded.
-4. Confirm the skill is toggled on.
+1. Download `mental-models.zip` from the [latest release](../../releases/latest).
+2. In Claude, click your profile icon (top right) → **Settings**.
+3. Go to **Capabilities** and confirm **Code execution and file creation** is enabled.
+4. Go to **Customize → Skills**.
+5. Click the **+** button, then **+ Create skill**.
+6. Upload `mental-models.zip`.
+7. Toggle the skill on if it isn't already.
+
+Start a new conversation and Claude will load the skill automatically when you ask for framework-based analysis.
 
 ### Claude Code (terminal)
 
@@ -37,11 +44,11 @@ git clone https://github.com/fpizzuta/mental-models.git
 cp -r mental-models/mental-models ~/.claude/skills/
 ```
 
-Start a new Claude Code session and the skill will load automatically.
+Start a new Claude Code session. Confirm the skill loaded by typing `/skills`.
 
 ### Claude API
 
-Reference the skill folder in your API calls. See the [Anthropic Skills API documentation](https://docs.claude.com) for current syntax.
+Reference the skill folder in your API calls. See the [Anthropic Skills documentation](https://docs.claude.com) for current syntax.
 
 ## How to use
 
@@ -92,4 +99,4 @@ MIT. See `LICENSE`.
 
 ## About
 
-Built by [Frank Pizzuta](https://www.linkedin.com/in/frankpizzuta), Principal Engineer at Inveniam Capital Partners. Part of the *Mental Frameworks for the AI Era* series.
+Built by [Frank Garofalo](https://www.linkedin.com/in/YOUR-LINKEDIN), Principal Engineer at Inveniam Capital Partners. Part of the *Mental Frameworks for the AI Era* series.
